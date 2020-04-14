@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComicReader</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        *{font-family:"PingFang TC","Microsoft JhengHei",sans-serif}html,body{margin:0;padding:0}#main .menu{background-color:rgba(255,255,255,0.8);box-shadow:0 2px 5px rgba(0,0,0,0.3);width:100%;height:30px;display:flex;align-items:center;justify-content:center;position:fixed;top:0;left:0;z-index:10}#main .menu .title{display:inline-block;margin-right:20px}@media screen and (max-width: 575px){#main .menu input{width:160px}}#main .panel{width:100%;max-width:800px;margin:30px auto 0}#main .panel img{display:block;width:100%}
+    </style>
+</head>
+<body>
+    <section id="main">
+        <div class="menu">
+            <span class="title">看漫畫哦</span>
+            <input type="file" id="input" onchange="selectFolder(event)"  webkitdirectory mozdirectory msdirectory odirectory directory multiple>
+            <button type="button" data-toggle="modal" data-target="#exampleModalCenter">教學</button>
+        </div>
+        <div class="panel"></div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">使用說明</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    Step.1 將此檔放入漫畫單話資料夾隔壁<br>
+                    例如：<br>
+                    XX漫畫<br>
+                        |- 第一話<br>
+                        |- comicReader.html<br><br>
+                    Step.2 檔案選擇想看的漫畫單話資料夾<br><br>
+                    Step.3 開啃
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        let $panel=$("#main .panel"),$title=$("#main .menu .title");function selectFolder(e){let t=e.target.files,l=[];if(t.length>0){for(let e=0;e<t.length;e++)l.push(t[e].webkitRelativePath);l.sort(),$panel.empty();for(let e=0;e<t.length;e++)$panel.append(`<img src="./${l[e]}" />`);let e=t[0].webkitRelativePath.split("/")[0];$title.text(e)}}
+    </script>
+</body>
+</html>

@@ -5,8 +5,6 @@ function selectFolder(e) {
     let theFiles = e.target.files; // choose folder's all files
     let images_array = [];
 
-    
-
     // have folder
     if (theFiles.length > 0) {
         // resort

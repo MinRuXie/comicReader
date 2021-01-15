@@ -1,5 +1,7 @@
+let $main = $('.main');
 let $panel = $('#js-panel');
 let $title = $('#js-title');
+let $dark_mode_btn = $('#js-dark-mode-btn');
 
 function selectFolder(e) {
     let theFiles = e.target.files; // choose folder's all files
@@ -26,3 +28,7 @@ function selectFolder(e) {
         $title.text(folder_name);
     }
 }
+
+$dark_mode_btn.on('click', function(){
+    $main.toggleClass('dark-mode');
+});

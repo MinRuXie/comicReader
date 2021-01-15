@@ -11,6 +11,45 @@ p {
   line-height: 2;
 }
 
+input[type=file],
+button {
+  cursor: pointer;
+}
+input[type=file]:focus,
+button:focus {
+  outline: none;
+}
+
+input {
+  font-size: 14px;
+}
+@media screen and (max-width: 575px) {
+  input {
+    width: 190px;
+  }
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button:hover i {
+  color: rgba(0, 0, 0, 0.5);
+}
+button i {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.8);
+  transition: 0.3s;
+}
+
+.main {
+  min-height: 100vh;
+  /* dark mode */
+}
 .main .menu {
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
@@ -28,23 +67,31 @@ p {
   display: inline-block;
   margin-right: 20px;
 }
-@media screen and (max-width: 575px) {
-  .main .menu input {
-    width: 160px;
-  }
-}
-.main .menu input[type=file],
-.main .menu button {
-  cursor: pointer;
+.main .menu .dark-mode-btn {
+  margin-left: 8px;
 }
 .main .panel {
   width: 100%;
   max-width: 800px;
-  margin: 30px auto 0;
+  margin: 0 auto;
+  padding-top: 30px;
 }
 .main .panel img {
   display: block;
   width: 100%;
+}
+.main.dark-mode {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.main.dark-mode .menu {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.8);
+}
+.main.dark-mode button:hover i {
+  color: rgba(255, 255, 255, 0.5);
+}
+.main.dark-mode button i {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /*# sourceMappingURL=style.css.map */

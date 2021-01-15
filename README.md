@@ -32,3 +32,4 @@ comicbook
 * HTML
 * SCSS
 * JavaScript
+* Bootstrap (modal)

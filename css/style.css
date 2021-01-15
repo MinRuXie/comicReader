@@ -33,6 +33,10 @@ p {
     width: 160px;
   }
 }
+.main .menu input[type=file],
+.main .menu button {
+  cursor: pointer;
+}
 .main .panel {
   width: 100%;
   max-width: 800px;

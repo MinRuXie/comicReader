@@ -36,6 +36,11 @@ p {
                 width: 160px;
             }
         }
+
+        input[type=file],
+        button {
+            cursor: pointer;
+        }
     }
 
     .panel {

@@ -1,24 +1,23 @@
-let $panel = $('#main .panel');
-let $title = $('#main .menu .title')
+let $panel = $('#js-panel');
+let $title = $('#js-title');
 
 function selectFolder(e) {
     let theFiles = e.target.files; // choose folder's all files
-    let images_array = [];
-
+    
     // have folder
     if (theFiles.length > 0) {
-        // resort
-        for (let i=0; i < theFiles.length ; i++) {
-            images_array.push(theFiles[i].webkitRelativePath);
-        }
-        images_array.sort();
-        
         // remove images
         $panel.empty();
 
         // append images
         for (let i=0; i < theFiles.length ; i++) {
-            $panel.append(`<img src="./images/${images_array[i]}" />`);
+            let reader = new FileReader();
+
+            reader.onload = function(e) {
+                $panel.append(`<img data-name="${theFiles[i].name}" src="${e.target.result}" />`);
+            }
+            
+            reader.readAsDataURL(theFiles[i]); // convert to base64 string
         }
 
         // update title
@@ -27,4 +26,3 @@ function selectFolder(e) {
         $title.text(folder_name);
     }
 }
-

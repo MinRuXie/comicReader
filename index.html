@@ -9,13 +9,13 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-    <section id="main">
+    <section class="main">
         <div class="menu">
-            <span class="title">看漫畫哦</span>
-            <input type="file" id="input" onchange="selectFolder(event)"  webkitdirectory mozdirectory msdirectory odirectory directory multiple>
+            <span id="js-title" class="title">看漫畫哦</span>
+            <input type="file" onchange="selectFolder(event)"  webkitdirectory mozdirectory msdirectory odirectory directory multiple>
             <button type="button" data-toggle="modal" data-target="#exampleModalCenter">教學</button>
         </div>
-        <div class="panel"></div>
+        <div id="js-panel" class="panel"></div>
     </section>
 
     <!-- Modal -->
@@ -29,9 +29,17 @@
                 </button>
                 </div>
                 <div class="modal-body">
-                    Step.1 將漫畫圖檔放入 images 資料夾<br>
-                    Step.2 檔案選擇想看的漫畫單話資料夾<br>
-                    Step.3 開啃
+                    <p>漫畫圖檔名稱須為整齊含編號的名稱，例如：</p>
+                    <ul>
+                        <li>image_001.jpg</li>
+                        <li>image_002.jpg</li>
+                    </ul>
+                    <br>
+                    <p>
+                        Step.1 點擊「選擇檔案」按鈕<br>
+                        Step.2 選擇「漫畫單話」資料夾，例如：第一話<br>
+                        Step.3 開啃
+                    </p>
                 </div>
             </div>
         </div>

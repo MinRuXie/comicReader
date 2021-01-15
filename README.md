@@ -8,7 +8,7 @@
 ### 功能介紹
 
 #### 法一：線上使用
-* https://minruxie.github.io/comicReader/index.html
+* https://minruxie.github.io/comicReader
 
 #### 法二：下載檔案使用
 * 下載 `comicReader.html` 這個檔案然後開啟。
